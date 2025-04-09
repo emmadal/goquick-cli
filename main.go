@@ -27,11 +27,11 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	switch msg := msg.(type) {
 	case tea.KeyMsg:
 		switch msg.String() {
-		case "q", ":q", "ctrl+c":
+		case "q", "ctrl+c":
 			return m, tea.Quit
 		}
 	}
-	return m, nil
+	return m, tea.Quit
 }
 
 // View handles the display of the program.
@@ -56,13 +56,16 @@ func (m model) View() string {
 	sb.WriteString("$ quick <command>\n")
 	sb.WriteString("\n")
 	sb.WriteString(BLACK_BOLD + "COMMANDS:\n" + RESET)
-	sb.WriteString("q: \tquit\n")
 	sb.WriteString("init: \tcreate a new project\n")
 	sb.WriteString("addc: \tadd a new controller\n")
 	sb.WriteString("\n")
 	sb.WriteString(BLACK_BOLD + "EXAMPLES:\n" + RESET)
 	sb.WriteString("$ quick init\n")
 	sb.WriteString("$ quick addc controller_name\n")
+	sb.WriteString("\n")
+	sb.WriteString(BLACK_BOLD + "FLAGS:\n" + RESET)
+	sb.WriteString("--version: 	show quick version\n")
+	sb.WriteString("--help: 	show help for command\n")
 	return sb.String()
 }
 
