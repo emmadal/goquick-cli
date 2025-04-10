@@ -6,6 +6,7 @@ import (
 	"strings"
 
 	tea "github.com/charmbracelet/bubbletea"
+	"github.com/goquick-run/cli/internal"
 )
 
 const (
@@ -40,7 +41,7 @@ func (m model) View() string {
 	sb := strings.Builder{}
 
 	// Pre-allocate buffer with approximate size to avoid reallocations
-	sb.Grow(50)
+	sb.Grow(500)
 
 	sb.WriteString(`
 ██████╗ ██╗   ██╗██╗ ██████╗██╗  ██╗
@@ -72,6 +73,8 @@ func (m model) View() string {
 
 func main() {
 	m := model{}
+
+	// Get command line arguments
 	args := os.Args
 	if len(args) > 1 {
 		switch args[1] {
@@ -79,12 +82,25 @@ func main() {
 			// Just display the version
 			fmt.Fprintf(os.Stdout, "quick version %s\n", VERSION)
 			os.Exit(0)
+
 		case "--help":
 			// Just display the help view
 			fmt.Fprint(os.Stdout, m.View())
 			os.Exit(0)
+
+		case "init":
+			projectName, err := internal.CreateProject()
+			if err != nil {
+				fmt.Fprintf(os.Stderr, "Error creating project: %s\n", err)
+				os.Exit(1)
+			}
+			// Show instructions
+			internal.BootstrapInstructions(projectName)
+			os.Exit(0)
 		}
 	}
+
+	// Run the program
 	if _, err := tea.NewProgram(m).Run(); err != nil {
 		fmt.Fprintf(os.Stderr, "Error running program: %s\n", err)
 		os.Exit(1)
