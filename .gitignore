@@ -25,6 +25,6 @@ go.work.sum
 .qodo
 .DS_Store
 
-# Added by goreleaser init:
 dist/
 vendor/
+build/
