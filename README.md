@@ -315,14 +315,36 @@ For more information, check the documentation at:
 │   ├── root.go
 │   ├── root_test.go
 │   ├── template
+│   │   ├── add.go
+│   │   ├── add_test.go
+│   │   ├── list.go
+│   │   ├── list_test.go
+│   │   ├── template.go
+│   │   ├── template_test.go
+│   │   ├── use.go
+│   │   └── use_test.go
 │   ├── ui.go
 │   └── ui_test.go
 ├── go.mod
 ├── go.sum
 ├── internal
 │   ├── project
+│   │   ├── creator.go
+│   │   ├── creator_test.go
+│   │   ├── validator.go
+│   │   └── validator_test.go
 │   ├── template
+│   │   ├── manager.go
+│   │   ├── manager_test.go
+│   │   ├── renderer.go
+│   │   └── renderer_test.go
 │   └── ui
+│       ├── prompt.go
+│       ├── prompt_test.go
+│       ├── quick.go
+│       ├── quick_test.go
+│       ├── spinner.go
+│       └── spinner_test.go
 ├── main.go
 └── quick_logo.png
 ```
