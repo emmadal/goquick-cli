@@ -50,6 +50,7 @@ go install github.com/goquick-run/cli@latest
 git clone https://github.com/goquick-run/cli.git
 cd cli
 go install
+mv ~/go/bin/cli ~/go/bin/quick
 ```
 
 ### First Project

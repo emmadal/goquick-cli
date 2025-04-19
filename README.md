@@ -27,14 +27,16 @@ Quick CLI is a powerful command-line tool designed to help you create and manage
 
 ```bash
 go install github.com/goquick-run/cli@latest
+mv ~/go/bin/cli ~/go/bin/quick
 ```
 
 ### Option 2 – Clone and build manually
 
 ```bash
-git clone [https://github.com/goquick-run/cli.git](https://github.com/goquick-run/cli.git)
+git clone https://github.com/goquick-run/cli
 cd cli
 go install
+mv ~/go/bin/cli ~/go/bin/quick
 ```
 
 ### 🧠 Usage
