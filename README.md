@@ -113,7 +113,7 @@ To start using your project:
 
   cd my-awesome-api
   go mod tidy
-  go run main.go
+  go run cmd/server/main.go
 ```
 
 For more information, check the documentation at: [https://github.com/goquick-run/docs](https://github.com/goquick-run/docs)

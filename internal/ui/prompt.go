@@ -61,8 +61,8 @@ func ShowBootstrapInstructions(projectName string) {
 
 	fmt.Printf("\n  cd %s\n", projectName)
 	fmt.Println("  go mod tidy")
-	fmt.Println("  go run main.go")
+	fmt.Printf("\n  go run cmd/server/main.go\n")
 
 	fmt.Println("\nFor full documentation, visit:")
-	fmt.Println("  https://goquick-run/docs")
+	fmt.Println("  https://goquick.run/docs")
 }
