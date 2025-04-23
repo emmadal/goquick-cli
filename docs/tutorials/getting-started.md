@@ -46,7 +46,7 @@ To start using your project:
 
   cd my-first-api
   go mod tidy
-  go run main.go
+  go run cmd/server/main.go
 ```
 
 ### Step 2: Navigate to your project directory

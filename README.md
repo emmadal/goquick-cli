@@ -265,7 +265,7 @@ To start using your project:
 
   cd my-api
   go mod tidy
-  go run main.go
+  go run run cmd/server/main.go
 ```
 
 For more information, check the documentation at:
@@ -297,7 +297,7 @@ To start using your project:
 
   cd my-microservice
   go mod tidy
-  go run main.go
+  run cmd/server/main.go
 ```
 
 For more information, check the documentation at:

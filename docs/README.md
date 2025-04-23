@@ -72,7 +72,7 @@ After creating your project, navigate to the project directory and run it:
 ```bash
 cd my-first-project
 go mod tidy
-go run main.go
+go run cmd/server/main.go
 ```
 
 ## 🛠️ Commands Reference
